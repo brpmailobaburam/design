@@ -1,268 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ne">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Knowledge Hub</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em;
-        }
-
-        .content {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        h1, h2 {
-            color: #333;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        .topics {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
-
-        .topic {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .topic a {
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
-        }
-
-        .topic a:hover {
-            text-decoration: underline;
-        }
-
-        .video-section {
-            display: none;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .video-list {
-            margin-top: 15px;
-        }
-
-        .video-list a {
-            display: block;
-            color: #4CAF50;
-            text-decoration: none;
-            margin: 5px 0;
-        }
-
-        .video-list a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .social-links {
-            margin-top: 10px;
-        }
-
-        .social-links a {
-            color: #4CAF50;
-            text-decoration: none;
-            margin: 0 5px;
-        }
-
-        .social-links a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Files</title>
+  <style>
+    /* Blinking animation: background color परिवर्तन */
+    @keyframes blink {
+      0% { background-color: #ff69b4; }
+      50% { background-color: #ff1493; }
+      100% { background-color: #ff69b4; }
+    }
+    
+    /* Floating animation: balloon उडेको प्रभाव */
+    @keyframes float {
+      0% { transform: translateY(-50%) translateY(0px); }
+      50% { transform: translateY(-50%) translateY(-20px); }
+      100% { transform: translateY(-50%) translateY(0px); }
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    
+    /* Header styling */
+    header {
+      position: relative;  /* Absolute elements को लागि relative positioning */
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 0;
+      text-align: center;  /* h1 लाई केन्द्रमा राख्न */
+    }
+    
+    /* Circular container with pink background, blinking and floating effect */
+    .logo-container {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #ff69b4;
+      overflow: hidden;
+      /* दुवै animation एकै साथ प्रयोग: blinking र floating */
+      animation: blink 2s infinite, float 3s infinite;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Styling for the image */
+    .logo-container img {
+      width: 70%;
+      height: 70%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    /* Styling for the photo name text */
+    .photo-name {
+      font-size: 12px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      margin-top: 5px;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 100px; /* header को उचाइलाई फोटोको उचाइ संग मिलाउन */
+    }
+    
+    /* Main container styling */
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      color: #333;
+    }
+    
+    .download-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    
+    .download-box {
+      background-color: #f1f1f1;
+      padding: 30px;
+      margin: 15px;
+      text-align: center;
+      width: 280px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+    }
+    
+    .download-box:hover {
+      transform: scale(1.05);
+    }
+    
+    .download-box a {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 15px;
+    }
+    
+    .download-box a:hover {
+      background-color: #45a049;
+    }
+    
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+      header {
+        padding: 20px;
+      }
+      .logo-container {
+        position: static;
+        margin: 0 auto 10px;
+        transform: none;
+        animation: blink 2s infinite;  /* Mobile मा floating effect हटाउन सकिन्छ यदि चाहिएको भए */
+      }
+      header h1 {
+        line-height: normal;
+      }
+      .download-section {
+        flex-direction: column;
+        align-items: center;
+      }
+      .download-box {
+        width: 80%;
+      }
+    }
+  </style>
 </head>
+
+
 <body>
-
-    <!-- Header Section -->
-    <header>
-        <h1><span class="highlight" style="color: white;">Welcome to Computer Knowledge Hub</span></h1>
-        <h2><span class="highlight" style="color: yellow;">Learn and Explore Basics of Computers</span></h2>
-        <a href="computer.html" style="color: orange; text-decoration: none; padding: 10px; display: block; background-color: blue; border-radius: 5px; font-weight: bold; font-size: 20px; width: fit-content;">Go to Home</a>
-    </header>
-
-    <!-- Main Content Section -->
-    <div class="content">
-        <div class="topics" id="topics">
-
-            <!-- Topic 1 -->
-            <div class="topic">
-                <h3>Computer Basics</h3>
-                <p>Learn the fundamentals of computers, including hardware and software basics.</p>
-                <a href="#" onclick="showBasicsVideo()">Explore Computer Basics</a>
-            </div>
-
-            <!-- Topic 2 -->
-            <div class="topic">
-                <h3>Hardware & Printer</h3>
-                <p>Discover the essentials of computer hardware and printers.</p>
-                <a href="#" onclick="showPrinterVideo()">Explore Hardware & Printer</a>
-            </div>
-
-            <!-- Topic 3 -->
-            <div class="topic">
-                <h3>Operating Systems</h3>
-                <p>Understand different types of operating systems like Windows, macOS, and Linux.</p>
-                <a href="#" onclick="showOperatingSystemsVideo()">Explore Operating Systems</a>
-            </div>
-
-            <!-- Topic 4 -->
-            <div class="topic">
-                <h3>Internet & Networking</h3>
-                <p>Discover how the internet works and explore networking basics.</p>
-                <a href="networking.html">Explore Internet & Networking</a>
-            </div>
-        </div>
-
-
-
-
-        <!-- Video Section for Computer Basics -->
-        <div class="video-section" id="videoSectionBasics">
-            <h3 style="color: red;">यहाँ राखिएका भिडियोहरु हेरेर तपाईं कम्प्युटर बेसिक जान्नुहुने छ </h3>
-            <h4 style="color: blue;">Computer Basics Video Tutorial</h4>
-            <p>Voice Typing गर्न जान्नको लागि </p>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/vAmUDb-TaFA" title="Computer Basics Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>MS Word जान्नको लागि </p>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/teHmlDKvUys" title="Computer Basics Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>Copy Design गर्न जान्नको लागि </p>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/aeYVni3l80Y?si=f-Pd-PRAwnUl4OVT" title="Computer Basics Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>Letter Pad Design गर्न जान्नको लागि </p>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/OUFXsr9ZloA?si=0d93SHznNxiSsnFl" title="Computer Basics Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-            <div class="video-list">
-                <h4>More Videos:</h4>
-                <a href="#" onclick="loadVideo('https://www.youtube.com/embed/teHmlDKvUys')">Computer Basics - Part 2</a>
-                <a href="#" onclick="loadVideo('https://www.youtube.com/embed/4R8nKXmQt04')">Computer Basics - Advanced Tips</a>
-            </div>
-        </div>
-
-
-
-
-
-
-        <!-- Video Section for Hardware & Printer -->
-        <div class="video-section" id="videoSectionPrinter">
-<h3 style="color: red;">यहाँ राखिएका भिडियोहरु हेरेर तपाईं कम्प्युटर हार्डवेर र प्रिन्टरको बारेमा जान्नुहुने छ </h3>
-            <h4 style="color: blue;">Hardware & Printer Video Tutorial</h4>
-<p>Brother Printer मा मसि फेर्न जान्नको लागि </p>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/vAmUDb-TaFA" title="Hardware & Printer Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-           
-
-    	      <div class="video-list">
-                <h4>More Videos:</h4>
-                <a href="#" onclick="loadVideo('https://www.youtube.com/embed/vAmUDb-TaFA')">Printer Setup Guide</a>
-                <a href="#" onclick="loadVideo('https://www.youtube.com/embed/4R8nKXmQt04')">Hardware Maintenance Tips</a>
-            </div>
-        </div>
-
-
-
-
-
-
-        <!-- Video Section for Operating Systems -->
-        <div class="video-section" id="videoSectionOperatingSystems" style="display:none;">
-<h3 style="color: red;">यहाँ राखिएका भिडियोहरु हेरेर तपाईं कम्प्युटरको अपरेटिंग सिस्टमको बारेमा जान्नुहुने छ </h3>
-            <h4 style="color: blue;">Operating System Video Tutorial</h4>
-<p>Computer Settings</p>
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/9SEmdQ4ByKc?si=tAuWc-2Y16D1rs9P" title="Operating System Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-            <div class="video-list">
-                <h4>More Videos:</h4>
-                <a href="#" onclick="loadVideo('https://www.youtube.com/embed/vAmUDb-TaFA')">Printer Setup Guide</a>
-                <a href="#" onclick="loadVideo('https://www.youtube.com/embed/4R8nKXmQt04')">Hardware Maintenance Tips</a>
-            </div>
-        </div>
+  <header>
+    <!-- Circular container with photo and photo name -->
+    <div class="logo-container">
+      <!-- सुनिश्चित गर्नुहोस् कि "brpmailo.jpg" तपाईंको project directory मा उपलब्ध छ -->
+      <img src="brp.jpg" alt="brp.jpg">
     </div>
+    <h1>Welcome to My Download Center</h1>
+  </header>
+  
 
 
 
 
-
-
-
-
-    <!-- Footer Section -->
-    <footer>
-        <p id="footerText"></p>
-        <span class="highlight" style="color: red;"><p>Have any Questions: +977-9844078996</span></p>
-        <div class="social-links">
-            <a href="http://www.facebook.com/brpmailo" target="_blank">Facebook</a>
-            <a href="http://www.youtube.com/@ComputerMsaterBrp" target="_blank">YouTube</a>
-            <a href="http://www.tiktok.com/brpmailobaburam1" target="_blank">TikTok</a>
-        </div>
-    </footer>
-
-    <script>
-        // Display current date in footer
-        document.getElementById('footerText').textContent = "All rights reserved Our Computer Hub date: " + new Date().toLocaleDateString();
-
-        // Show Computer Basics Video
-        function showBasicsVideo() {
-            document.getElementById('topics').style.display = 'none';
-            document.getElementById('videoSectionPrinter').style.display = 'none';
-            document.getElementById('videoSectionBasics').style.display = 'block';
-        }
-
-        // Show Hardware & Printer Video
-        function showPrinterVideo() {
-            document.getElementById('topics').style.display = 'none';
-            document.getElementById('videoSectionBasics').style.display = 'none';
-            document.getElementById('videoSectionPrinter').style.display = 'block';
-        }
-
-        // Operating Systems Video
-        function showOperatingSystemsVideo() {
-            document.getElementById('topics').style.display = 'none';
-            document.getElementById('videoSectionBasics').style.display = 'none'; 
-            document.getElementById('videoSectionPrinter').style.display = 'none'; 
-            document.getElementById('videoSectionOperatingSystems').style.display = 'block'; // Show Operating System video
-        }
-
-        // Load specific video into iframe
-        function loadVideo(videoUrl) {
-            const iframes = document.querySelectorAll('.video-section iframe');
-            iframes.forEach(iframe => iframe.src = videoUrl);
-        }
-    </script>
+  <div class="container">
+    <h2>Download Your Files Below</h2>
+    <div class="download-section">
+      <div class="download-box">
+        <h3>MS Word Files</h3>
+        <p>Click the link below to download the MS Word file.</p>
+        <!-- तपाईंको Google Drive लिंक राख्नुहोस् -->
+        <a href="https://drive.google.com/your-ms-word-file-link" target="_blank">Download MS Word</a>
+      </div>
+      
+      <div class="download-box">
+        <h3>Adobe Photoshop Files</h3>
+        <p>Click the link below to download the Photoshop file.</p>
+        <!-- तपाईंको Google Drive लिंक राख्नुहोस् -->
+        <a href="https://drive.google.com/your-photoshop-file-link" target="_blank">Download Photoshop</a>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 Brpmailo. All rights reserved.</p>
+  </footer>
 </body>
 </html>
