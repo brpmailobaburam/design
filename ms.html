@@ -23,26 +23,48 @@
       list-style: none;
     }
     .link-list li {
-      background-color: #fff;
       margin: 10px 0;
-      padding: 15px;
-      border-radius: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .link-list li a {
       text-decoration: none;
       color: #4CAF50;
       font-weight: bold;
+      border: 2px solid #4CAF50;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .link-list li a:hover {
+      background-color: #4CAF50;
+      color: #fff;
     }
   </style>
 </head>
+
+
+
+
 <body>
   <h1>MS Word Designs</h1>
   <ul class="link-list">
-    <!-- तलका लिंकहरूमा आफ्नो Google Drive file ID हरू राख्नुहोस् -->
-    <li><a href="https://drive.google.com/uc?export=download&id=FILE_ID1" target="_blank">MS Word Design 1</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=FILE_ID2" target="_blank">MS Word Design 2</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=FILE_ID3" target="_blank">MS Word Design 3</a></li>
+    <!-- Certificate MS Word लिंक -->
+    <li>
+      <a href="https://docs.google.com/document/d/1kobu_XbCu-cA3ATqLiERRYTkW_PUkMN7/export?format=docx" target="_blank" download>
+        Certificate MS Word
+      </a>
+    </li>
+    <!-- अरू MS Word design लिंकहरू -->
+    <li>
+      <a href="https://drive.google.com/uc?export=download&id=FILE_ID2" target="_blank">
+        MS Word Design 2
+      </a>
+    </li>
+    <li>
+      <a href="https://drive.google.com/uc?export=download&id=FILE_ID3" target="_blank">
+        MS Word Design 3
+      </a>
+    </li>
     <!-- थप लिंकहरू यहाँ राख्न सक्नुहुन्छ -->
   </ul>
 </body>
