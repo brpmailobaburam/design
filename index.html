@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Design File</title>
   <link rel="icon" type="image/png" href="b.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* Blinking animation: background color परिवर्तन */
     @keyframes blink {
@@ -50,7 +49,6 @@
       overflow: hidden;
       /* दुवै animation एकै साथ प्रयोग: blinking र floating */
       animation: blink 2s infinite, float 3s infinite;
-      
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -91,11 +89,12 @@
     
     h2 {
       color: #333;
+      text-align: center;
     }
     
     .download-section {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
       margin-top: 30px;
     }
@@ -163,36 +162,31 @@
     }
   </style>
 </head>
-
-
 <body>
   <header>
-    <!-- Circular container with photo and photo name -->
+    <!-- Circular container with photo -->
     <div class="logo-container">
       <img src="brp.jpg" alt="brp.jpg">
+      <span class="photo-name">brp.jpg</span>
     </div>
     <h1>Welcome to My Download Center</h1>
   </header>
   
-
-
-
-
   <div class="container">
     <h2>Download Your Files Below</h2>
     <div class="download-section">
+      <!-- Download MS Word box: क्लिक गर्दा msword.html खुल्ने -->
       <div class="download-box">
         <h3>MS Word Files</h3>
-        <p>Click the link below to download the MS Word file.</p>
-        <!-- तपाईंको Google Drive लिंक राख्नुहोस् -->
-        <a href="https://drive.google.com/document/d/1kobu_XbCu-cA3ATqLiERRYTkW_PUkMN7/edit?usp=drive_link&ouid=108088261519548974995&rtpof=true&sd=true" target="_blank">Download MS Word</a>
+        <p>Click the link below to view the MS Word designs.</p>
+        <a href="ms.html" target="_blank">Download MS Word</a>
       </div>
       
+      <!-- Download Photoshop box: क्लिक गर्दा photoshop.html खुल्ने -->
       <div class="download-box">
         <h3>Adobe Photoshop Files</h3>
-        <p>Click the link below to download the Photoshop file.</p>
-        <!-- तपाईंको Google Drive लिंक राख्नुहोस् -->
-        <a href="https://drive.google.com/your-photoshop-file-link" target="_blank">Download Photoshop</a>
+        <p>Click the link below to view the Photoshop designs.</p>
+        <a href="php.html" target="_blank">Download Photoshop</a>
       </div>
     </div>
   </div>
